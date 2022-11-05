@@ -1,0 +1,330 @@
+********* SOLVE ME FIRST ************
+
+
+def solveMeFirst(a,b):
+	# Hint: Type return a+b below
+    return a+b
+
+num1 = int(input())
+num2 = int(input())
+res = solveMeFirst(num1,num2)
+print(res)
+
+
+
+***** SIMPLE ARRAY *******
+
+
+
+def simpleArraySum(ar):
+    sum = 0
+
+    for i in ar:
+        sum = sum + i
+    
+    return(sum)
+        
+if __name__ == '__main__':
+    ar_count = int(input().strip())
+    ar = list(map(int, input().rstrip().split()))
+    result = simpleArraySum(ar)
+    print(result)
+
+
+********** VERY BIG SUM **********
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'aVeryBigSum' function below.
+#
+# The function is expected to return a LONG_INTEGER.
+# The function accepts LONG_INTEGER_ARRAY ar as parameter.
+#
+
+def aVeryBigSum(ar):
+    # Write your code here
+    return sum(ar)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input().strip())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = aVeryBigSum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+********** DIAGONAL DIFFERENCE ***********
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'diagonalDifference' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+def diagonalDifference(arr):
+    # Write your code here
+    sum1 = 0
+    sum2 = 0
+    for j in range(len(arr)):
+        sum1+=arr[j][j]
+        sum2+=arr[j][len(arr)-1-j]
+        
+    return(abs(sum1-sum2))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+**** PLUS MINUS *******
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'plusMinus' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def plusMinus(arr):
+    # Write your code here
+    numbers_negative = [i for i in arr if i < 0]
+    numbers_positive = [i for i in arr if i > 0]
+    zero = [i for i in arr if i == 0]
+    
+    print(len(numbers_positive)/len(arr))
+    print(len(numbers_negative)/len(arr))
+    print(len(zero)/len(arr))
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
+
+
+
+********** STAIR CASE **************
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'staircase' function below.
+#
+# The function accepts INTEGER n as parameter.
+#
+
+def staircase(n):
+    # Write your code here
+    def staircase(n):
+        for i in range(1,n+1):
+           print(str('#'*i).rjust(n)) 
+        
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    staircase(n)
+
+
+
+*********** MINI MAX SUM **********
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'miniMaxSum' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def miniMaxSum(arr):
+    # Write your code here
+    print(sum(arr)-max(arr),sum(arr)-min(arr))
+    
+if __name__ == '__main__':
+
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
+ 
+
+
+
+*********** BIRTHDAY CAKE CANDLES ***********
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'birthdayCakeCandles' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY candles as parameter.
+#
+
+def birthdayCakeCandles(candles):
+    # Write your code here
+    return(candles.count(sorted(candles)[-1]))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    candles_count = int(input().strip())
+
+    candles = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(candles)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+************ TIME CONVERSION **********
+
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
+def timeConversion(s):
+    # Write your code here
+    ref = s[-2:]
+    hrs = s[:2]
+    mins = s[3:5]
+    secs = s[6:8]
+    
+    if ref == "AM" and int(hrs) == 12:
+        hrs = "00"
+    if ref == "PM" and int(hrs) < 12:
+        hrs = str(int(hrs) + 12)
+    return "{}:{}:{}".format(hrs, mins, secs)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+
+
+
+******* COMPARE THE TRIPLETS ***********
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'compareTriplets' function below.
+#
+# The function is expected to return an INTEGER_ARRAY.
+# The function accepts following parameters:
+#  1. INTEGER_ARRAY a
+#  2. INTEGER_ARRAY b
+#
+
+def compareTriplets(a, b):
+    # Write your code here
+    def compareTriplets(a, b):
+     c = [0,0] 
+     for i in range(len(a)):
+        if(a[i]>b[i]):
+            c[0] +=1
+        elif(b[i]>a[i]):
+            c[1] +=1
+     return c
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    result = compareTriplets(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
